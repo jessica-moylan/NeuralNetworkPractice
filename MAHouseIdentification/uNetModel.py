@@ -1,4 +1,4 @@
-import torch
+import torch #imports torch library
 import torch.nn as nn
 import torchvision.transforms.functional as TF
 
