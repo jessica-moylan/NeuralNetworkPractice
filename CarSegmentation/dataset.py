@@ -21,7 +21,7 @@ class CarDataset(Dataset):
         mask_path = os.path.join(self.mask_dir, self.images[index].replace(".jpg", "_mask.gif"))
         
         #loading the images
-        image = np.array(Image.open(image_path).convert('RBG'))
+        image = np.array(Image.open(image_path))
         mask = np.array(Image.open(mask_path).convert("L"), dtype=np.float32) #we convert the mask to a black and white image
         mask[mask == 255.0] = 1.0
 

@@ -92,12 +92,12 @@ class UNET(nn.Module):
         return self.final_conv(x)
 
 def test():
+    print("cuda" if torch.cuda.is_available() else "cpu")
     x = torch.randn((3, 1, 161, 161))
     model = UNET(in_channels=1, out_channels=1)
     preds = model(x)
-    assert preds.shape == x.shape
     print(preds.shape)
-    print(x.shape)
+    assert preds.shape == x.shape
 
 if __name__ == "__main__":
     test()
