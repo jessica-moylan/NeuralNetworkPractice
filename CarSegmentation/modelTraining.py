@@ -22,7 +22,7 @@ NUM_WORKERS = 2
 IMAGE_HEIGHT = 160 
 IMAGE_WIDTH = 240
 PIN_MEMORY = True
-LOAD_MODEL = False
+LOAD_MODEL = True
 TRAIN_IMG_DIR = "/home/jessica/Project Code/car_data/train_data/"
 TRAIN_MASK_DIR = "/home/jessica/Project Code/car_data/train_masks_data/"
 VALIDATION_IMG_DIR = "/home/jessica/Project Code/car_data/validation_images/"
@@ -101,7 +101,7 @@ def main():
         load_checkpoint(torch.load("my_checkpoint.pth.tar"), model)
 
 
-    #check_accuracy(val_loader, model, device=DEVICE)
+    check_accuracy(val_loader, model, device=DEVICE)
     scaler = torch.cuda.amp.GradScaler()
 
     for epoch in range(NUM_EPOCHS):
@@ -118,7 +118,7 @@ def main():
         check_accuracy(val_loader, model, device=DEVICE)
 
         # print some examples to a folder
-        save_predictions_as_images(val_loader, model, folder="CarSegmentation/saved_images", device=DEVICE)
+        save_predictions_as_images(val_loader, model, folder="saved_images/", device=DEVICE)
 
 if __name__ == "__main__":
     main()
