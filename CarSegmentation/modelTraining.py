@@ -23,10 +23,10 @@ IMAGE_HEIGHT = 160
 IMAGE_WIDTH = 240
 PIN_MEMORY = True
 LOAD_MODEL = True
-TRAIN_IMG_DIR = "/home/jessica/Project Code/car_data/train_data/"
-TRAIN_MASK_DIR = "/home/jessica/Project Code/car_data/train_masks_data/"
-VALIDATION_IMG_DIR = "/home/jessica/Project Code/car_data/validation_images/"
-VALIDATION_MASK_DIR = "/home/jessica/Project Code/car_data/validation_masks/"
+TRAIN_IMG_DIR = "/train_data/"
+TRAIN_MASK_DIR = "/train_masks_data/"
+VALIDATION_IMG_DIR = "/validation_images/"
+VALIDATION_MASK_DIR = "/validation_masks/"
 
 
 def training_function(loader, model, optimizer, loss_fn, scaler):
